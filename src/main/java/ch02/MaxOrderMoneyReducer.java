@@ -13,7 +13,7 @@ import org.apache.hadoop.mapred.Reducer;
 import org.apache.hadoop.mapred.Reporter;
 
 // vv MaxTemperatureReducer2
-public class MaxTemperatureReducer extends MapReduceBase
+public class MaxOrderMoneyReducer extends MapReduceBase
   implements Reducer<Text, IntWritable, Text, IntWritable> {
 
   public void reduce(Text key, Iterator<IntWritable> values,

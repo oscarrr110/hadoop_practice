@@ -11,22 +11,22 @@ import org.apache.hadoop.mapred.FileOutputFormat;
 import org.apache.hadoop.mapred.JobClient;
 import org.apache.hadoop.mapred.JobConf;
 
-public class MaxTemperature {
-
+public class MaxOrderMoney {
+	
   public static void main(String[] args) throws IOException {
     if (args.length != 2) {
       System.err.println("Usage: MaxTemperature <input path> <output path>");
       System.exit(-1);
     }
     
-    JobConf conf = new JobConf(MaxTemperature.class);
+    JobConf conf = new JobConf(MaxOrderMoney.class);
     conf.setJobName("Max temperature");
 
     FileInputFormat.addInputPath(conf, new Path(args[0]));
     FileOutputFormat.setOutputPath(conf, new Path(args[1]));
     
-    conf.setMapperClass(MaxTemperatureMapper.class);
-    conf.setReducerClass(MaxTemperatureReducer.class);
+    conf.setMapperClass(MaxOrderMoneyMapper.class);
+    conf.setReducerClass(MaxOrderMoneyReducer.class);
 
     conf.setOutputKeyClass(Text.class);
     conf.setOutputValueClass(IntWritable.class);
